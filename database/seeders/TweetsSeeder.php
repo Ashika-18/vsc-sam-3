@@ -11,12 +11,14 @@ class TweetsSeeder extends Seeder
     
     public function run()
     {
+        Tweet::factory()->count(10)->create();
+
         Tweet::create([
             "content" => "－投稿１です！－",
         ]);
 
         Tweet::create([
-            "content" => "－投稿2です!－",
+            "content" => "-投稿2です!-",
         ]);
     }
 }

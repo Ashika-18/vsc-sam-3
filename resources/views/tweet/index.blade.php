@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>Twetter - Application</h1>
+    <div>
+        @foreach($tweets as $tweet)
+            <p>{{ $tweet->content }}</p>
+        @endforeach
+    </div>
 </body>
 </html>
