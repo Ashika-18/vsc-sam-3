@@ -26,6 +26,11 @@
                 <summary>{{ $tweet->content }}</summary>
                 <div>
                     <a href="{{ route('tweet.update.index', ['tweetId' => $tweet->id]) }}">編集</a>
+                    <form action="{{ route('tweet.delete', ['tweetId' => $tweet->id]) }}" method="post" onsubmit='if(confirm("削除しても良いですか？")) {return true} else {return false};'>
+                        @method("delete")
+                        @csrf
+                        <button type="submit">削除</button>
+                    </form>
                 </div>
             </details>
         @endforeach
