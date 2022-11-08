@@ -13,7 +13,7 @@
         <span>140文字まで</span>
         <textarea name="tweet" id="tweet-content" type="text" placeholder="つぶやきを入力">{{ $tweet->content }}</textarea>
         @error("tweet")
-            <p>{{ message }}</p>
+            <p>{{ $message }}</p>
         @enderror
         <button type="submit">編集</button>
     </form>

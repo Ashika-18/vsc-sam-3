@@ -11,7 +11,8 @@ class DeleteController extends Controller
     public function __invoke(Request $request)
     {
         $tweetId = (int) $request->route("tweetId");
-        $tweet = Tweet::where("id", $tweetId)->firstOrFail();
+        $tweet = Tweet::destroy($tweetId);
+        $tweet->delete();
         $tweet->save();
 
         return redirect()
